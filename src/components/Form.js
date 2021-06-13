@@ -62,7 +62,6 @@ class Form extends Component {
     aee.splice(index, 1);
     console.log(this.state.orders);
     this.setState({ ...this.state, orders: aee });
-    // console.log(index);
   };
   handleCalculateBtn = () => {
     if (this.state.algorithm === "FIFO") {
@@ -70,7 +69,6 @@ class Form extends Component {
     } else {
       this.props.dispatch(sortAndDistributePro(this.state));
     }
-    // this.props.dispatch(addFormDataToStore(this.state));
   };
 
   handleClearBtn = () => {
@@ -89,12 +87,7 @@ class Form extends Component {
     return (
       <div id="form">
         <h1>FORM</h1>
-        {/* <label>Add Stock:</label>
-        <input
-          type="number"
-          value={this.state.stock}
-          onChange={this.handleStockChange}
-        /> */}
+
         <TextField
           name="name"
           variant="outlined"
@@ -129,12 +122,6 @@ class Form extends Component {
         {this.state.orders.map((order, index) => {
           return (
             <div key={index} id={index}>
-              {/* <input
-                placeholder="Name"
-                type="text"
-                required
-                onChange={(e) => this.handleNameChange(e, index)}
-              /> */}
               <TextField
                 name="name"
                 variant="outlined"
@@ -143,12 +130,7 @@ class Form extends Component {
                 onChange={(e) => this.handleNameChange(e, index)}
                 style={{ margin: "10px" }}
               ></TextField>
-              {/* <input
-                placeholder="Add Price"
-                type="number"
-                required
-                onChange={(e) => this.handlePriceChange(e, index)}
-              /> */}
+
               <TextField
                 name="name"
                 variant="outlined"
@@ -157,12 +139,7 @@ class Form extends Component {
                 style={{ margin: "10px" }}
                 onChange={(e) => this.handlePriceChange(e, index)}
               ></TextField>
-              {/* <input
-                placeholder="Add Quantity"
-                type="number"
-                required
-                onChange={(e) => this.handleQtyChange(e, index)}
-              /> */}
+
               <TextField
                 name="name"
                 variant="outlined"
@@ -171,12 +148,7 @@ class Form extends Component {
                 style={{ margin: "10px" }}
                 onChange={(e) => this.handleQtyChange(e, index)}
               ></TextField>
-              {/* <input
-                placeholder="Time"
-                type="number"
-                required
-                onChange={(e) => this.handleTimeChange(e, index)}
-              /> */}
+
               <TextField
                 name="name"
                 variant="outlined"
@@ -186,9 +158,7 @@ class Form extends Component {
                 // fullWidth
                 onChange={(e) => this.handleTimeChange(e, index)}
               ></TextField>
-              {/* <button onClick={(e) => this.handleRemoveBtn(index)}>
-                Remove
-              </button> */}
+
               <Button
                 variant="contained"
                 color="secondary"
@@ -200,7 +170,6 @@ class Form extends Component {
           );
         })}
         <hr />
-        {/* <button onClick={(e) => this.addOrder(e)}>Add Buy Order</button> */}
         <Button
           variant="contained"
           color="primary"
@@ -210,7 +179,6 @@ class Form extends Component {
           Add Buy Order
         </Button>
         <hr />
-        {/* <button onClick={this.handleCalculateBtn}>Calculate</button> */}
         <Button
           variant="contained"
           color="primary"
@@ -219,7 +187,6 @@ class Form extends Component {
         >
           Calculate
         </Button>
-        {/* <button onClick={this.handleClearBtn}>Clear</button> */}
         <Button
           variant="contained"
           color="secondary"

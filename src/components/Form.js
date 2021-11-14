@@ -91,6 +91,8 @@ class Form extends Component {
         <TextField
           name="name"
           variant="outlined"
+          color="secondary"
+          focused
           label="Add Stock"
           type="number"
           value={this.state.stock}
@@ -99,6 +101,7 @@ class Form extends Component {
             this.setState({ ...this.state, stock: e.target.value })
           }
         ></TextField>
+
         <hr />
         <label>Algorithm:</label>
         <label>FIFO</label>
